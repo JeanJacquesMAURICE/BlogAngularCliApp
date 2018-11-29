@@ -1,0 +1,19 @@
+<li [ngClass]="{'list-group-item': true,
+
+                'list-group-item-success': post.loveIts > 0 ,
+
+                'list-group-item-danger': post.loveIts < 0 }">
+
+  <div>
+    <h5 class="d-flex justify-content-end">{{ post.created_at | date:"short" }}</h5>
+    <hr/>
+    <h2 class="d-flex justify-content-start">{{ post.title }}</h2>
+  </div>
+  <p>{{ post.content }}</p>
+  <hr/>
+  <div>
+    <button class="btn btn-success btn-sm mr-2" (click)="onLikeClick()">{{likeLabel}}</button>
+    <button class="btn btn-danger btn-sm" (click)="onDislikeClick()">{{dislikeLabel}}</button>
+  </div>
+</li>
+
